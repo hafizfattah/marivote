@@ -43,6 +43,12 @@ const RoomDetail = () => {
     });
   }, [socket]);
 
+  // useEffect(() => {
+  //   socket.on('receive_answer', () => {
+  //     setShouldFetch(true);
+  //   });
+  // }, [socket]);
+
   useEffect(() => {
     if (roomId) {
       const getTopics = async () => {
@@ -82,6 +88,10 @@ const RoomDetail = () => {
 
   useEffect(() => {
     socket.on('receive_result', (data) => {
+      if (data.isRestart) {
+        setResults([]);
+        return;
+      }
       const getResult = async () => {
         let {data: answers} = await supabase.from('answers').select('*').eq('topicId', data.topicId);
 
@@ -111,7 +121,7 @@ const RoomDetail = () => {
   const restartVote = async (id: string) => {
     await supabase.from('answers').delete().eq('topicId', id);
     setResults([]);
-    socket.emit('send_answer', {room: roomId});
+    socket.emit('send_answer', {room: roomId, isRestart: true});
   };
   return (
     <div className={`py-8 bg-hfg-green-medium min-h-[calc(100vh-188px)]`}>

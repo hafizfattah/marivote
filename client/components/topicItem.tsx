@@ -37,7 +37,6 @@ const TopicItem = ({id, title, options, result, onDelete, onShowResult, onRestar
 
   const chooseOption = async (option: string) => {
     setChoosen(option);
-    if (option === responded[0]?.answer) return;
 
     try {
       setIsLoading(true);
@@ -50,10 +49,14 @@ const TopicItem = ({id, title, options, result, onDelete, onShowResult, onRestar
   };
 
   useEffect(() => {
-    socket.on('receive_answer', () => {
+    socket.on('receive_answer', (data) => {
+      if (data.isRestart) {
+        socket.emit('send_result', {room: roomId, topicId: id, isRestart: true});
+        setChoosen('');
+      }
       setShouldFetch(true);
     });
-  }, [socket]);
+  }, [id, roomId, socket]);
 
   return (
     <div className="box-shadowed border-4 border-hfg-black rounded-lg p-4 md:p-6 bg-white w-full mt-8">

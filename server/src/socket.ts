@@ -53,7 +53,7 @@ const socket = ({ io }: { io: Server }) => {
 		});
 
 		socket.on("send_answer", (data) => {
-			io.to(data.room).emit("receive_answer");
+			io.to(data.room).emit("receive_answer", data);
 		});
 
 		socket.on("send_result", (data) => {
