@@ -10,7 +10,16 @@ import {useSocket} from '../../hooks/useSocket';
 import {useUser} from '../../context/user';
 import supabase from '../../utils/supabase';
 import protectedRoute from '../../utils/protected';
-import {TopicInterface, ParticipantInterface} from './interface';
+interface TopicInterface {
+  id: string;
+  title: string;
+  options: string;
+}
+
+interface ParticipantInterface {
+  avatar_url: string;
+  name: string;
+}
 
 const RoomDetail = () => {
   const {socket} = useSocket();

@@ -7,7 +7,12 @@ import {useEffect, useState} from 'react';
 import protectedRoute from '../../utils/protected';
 import supabase from '../../utils/supabase';
 import {useUser} from '../../context/user';
-import {RoomInterface} from './interface';
+interface RoomInterface {
+  id: number;
+  name: string;
+  participant: number;
+  theme: string;
+}
 
 let classBackground = ['orange', 'pink', 'blue', 'yellow'];
 
