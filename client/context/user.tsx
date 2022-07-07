@@ -1,5 +1,12 @@
 import {createContext, useContext, useState} from 'react';
 
+export interface UserInterfaceType {
+  email: string;
+  id: string;
+  name: string;
+  avatar_url: string;
+}
+
 export const InitialUserState = {
   email: '',
   id: '',
@@ -14,7 +21,7 @@ export const useUser = () => {
 };
 
 export const UserProvider = (props: any) => {
-  const [userState, setUserState] = useState(InitialUserState);
+  const [userState, setUserState] = useState<UserInterfaceType>(InitialUserState);
 
   const SetUser = (userCredential: any) => {
     setUserState({...userCredential});
