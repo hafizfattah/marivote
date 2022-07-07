@@ -1,18 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import {LogOut} from 'react-feather';
-import {useUser} from '../context/user';
+import {useUser, InitialUserState} from '../context/user';
 import supabase from '../utils/supabase';
 
 import Button from './button';
 import {useEffect, useState} from 'react';
-
 const Header = () => {
   const user = useUser();
-  const [currentUser, setCurrentUser] = useState({
-    name: '',
-    avatar_url: '',
-  });
+  const [currentUser, setCurrentUser] = useState(InitialUserState);
 
   useEffect(() => {
     setCurrentUser(user);

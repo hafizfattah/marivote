@@ -1,10 +1,10 @@
-import {createContext, SetStateAction, useContext, useState} from 'react';
+import {createContext, useContext, useState} from 'react';
 
 export const InitialUserState = {
-  email: null,
-  id: null,
-  name: null,
-  avatar_url: null,
+  email: '',
+  id: '',
+  name: '',
+  avatar_url: '',
 };
 
 const UserContext = createContext(InitialUserState);
@@ -13,10 +13,10 @@ export const useUser = () => {
   return useContext(UserContext);
 };
 
-export const UserProvider = (props) => {
+export const UserProvider = (props: any) => {
   const [userState, setUserState] = useState(InitialUserState);
 
-  const SetUser = (userCredential) => {
+  const SetUser = (userCredential: any) => {
     setUserState({...userCredential});
   };
 
