@@ -1,0 +1,58 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "eslint.format.enable": true,
+  "prettier.useTabs": true,
+  "files.associations": {
+    "*.jsx": "javascriptreact"
+  },
+  "prettier.jsxSingleQuote": true,
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "[typescript]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+
+// {
+// 	"security.workspace.trust.untrustedFiles": "open",
+// 	"[vue]": {
+// 		"editor.defaultFormatter": "octref.vetur"
+// 	},
+// 	"editor.accessibilitySupport": "off",
+// 	"[javascript]": {
+// 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+// 	},
+// 	"editor.formatOnPaste": true,
+// 	"editor.formatOnSave": true,
+// 	"editor.inlineSuggest.enabled": true,
+// 	"window.zoomLevel": 1,
+// 	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+// 	"vetur.format.defaultFormatter.stylus": "none",
+// 	"eslint.format.enable": true,
+// 	"[css]": {
+// 		"editor.defaultFormatter": "vscode.css-language-features"
+// 	},
+// 	"files.associations": {
+// 		"*.jsx": "javascriptreact"
+// 	},
+// 	"prettier.useTabs": true,
+// 	"prettier.htmlWhitespaceSensitivity": "strict",
+// 	"prettier.jsxSingleQuote": true,
+// 	"eslint.validate": ["typescript", "typescriptreact"],
+// 	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+// 	"[typescriptreact]": {
+// 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+// 	},
+// 	"[json]": {
+// 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+// 	}
+// }
